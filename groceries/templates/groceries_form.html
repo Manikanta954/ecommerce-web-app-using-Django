@@ -1,0 +1,33 @@
+<!-- groceries_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if grocery %}Edit{% else %}Add{% endif %} Groceries Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>{% if grocery %}Edit{% else %}Add{% endif %} Groceries Product</h1>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="product_name" class="form-label">Product Name:</label>
+                <input type="text" name="product_name" class="form-control" value="{{ grocery.product_name|default:'' }}">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price:</label>
+                <input type="text" name="price" class="form-control" value="{{ grocery.price|default:'' }}">
+            </div>
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity:</label>
+                <input type="text" name="quantity" class="form-control" value="{{ grocery.quantity|default:'' }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+        <br>
+        <a href="{% url 'groceries-list' %}" class="btn btn-secondary">Back to List</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
