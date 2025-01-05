@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Groceries List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <center><h1 style="font-weight: 50px;font-weight:600">Groceries List</h1></center>
+   <br> <table border="1" class="table table-hover">
+        <thead>
+            <tr class="danger">
+                <th><h3>Product Name</h3></th>
+                <th><h3>Price</h3></th>
+                <th><h3>Quantity</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for grcs in grc %}
+            <tr>
+                <td><h4>{{ grcs.product_name }}</h4></td>
+                <td><h4>{{ grcs.price }}</h4></td>
+                <td><h4>{{ grcs.quantity }}</h4></td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

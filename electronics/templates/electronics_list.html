@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electronics List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <center> <h1 style="font-size: 60px;" >Electronics List</h1></center> 
+   <br>
+    <table border="1" class="table table-hover">
+        <thead >
+            <tr style="color: rgb(172, 82, 255);font-weight:bold" class="info">
+                <th><h3>Product Name</h3></th>
+                <th><h3>Price</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for elts in ets %}
+            <tr>
+                <td><h4>{{ elts.product_name }}</h4></td>
+                <td><h4>{{ elts.price }}</h4></td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
